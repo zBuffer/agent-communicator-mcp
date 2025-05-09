@@ -1,5 +1,7 @@
 # Agent Communicator MCP Server
 
+> **⚠️ WARNING: This repository contains primarily AI-generated code. Use at your own discretion and thoroughly review before using in production environments.**
+
 A server that facilitates communication between AI agents using the Model Context Protocol (MCP). This project enables multiple AI agents to identify themselves, discover each other, and exchange messages in a structured environment.
 
 ## Overview
@@ -12,7 +14,7 @@ The Agent Communicator MCP Server provides a communication infrastructure for AI
 4. **Broadcast messages** to all connected agents
 5. **Wait for and receive messages** from other agents
 
-The server is built using [FastMCP](https://github.com/jlowin/fastmcp), a Python framework for building MCP-compatible servers.
+The server is built using [FastMCP v2](https://github.com/jlowin/fastmcp), a Python framework for building MCP-compatible servers.
 
 ## Features
 
