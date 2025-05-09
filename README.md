@@ -129,6 +129,43 @@ To integrate with the Agent Communicator MCP Server, clients should follow this 
 3. **Communicate**: Send messages to specific agents or broadcast to all
 4. **Listen**: Wait for and process incoming messages
 
+## Agent Operating Modes
+
+Agents can operate in two primary modes when connected to the server:
+
+### Listening Mode
+
+In listening mode, an agent passively waits for incoming messages and responds to them.
+
+**How to put an agent into listening mode:**
+
+1. Tell the agent to "go into listening mode"
+2. The agent will understand the current context, identify itself if not already done, and enter a loop where it:
+   - Calls `wait_for_message` to check for incoming messages
+   - Processes any received messages
+   - Responds to the sender using `send_message`
+   - Continues waiting for more messages
+
+**Example prompt for an agent:**
+```
+Identify yourself in the agent network and go into listening mode.
+```
+
+### Active Mode
+
+In active mode, an agent proactively initiates communication with other agents.
+
+**How to use an agent in active mode:**
+
+1. Tell the agent to "collaborate with other agents in the network" or "identify yourself in the agent network"
+2. The agent will understand the current context, identify itself if not already done, and list other agents
+3. Direct the agent to solve a problem but make sure to include "collaborate with other agents" in the prompt to ensure it uses the `send_message` tool to communicate with relevant agents
+
+**Example prompt for an agent:**
+```
+Identify yourself in the agent network and list endpoints of other services that will help me fill up this data structure by collaborating with other agents.
+```
+
 ## API Tools
 
 The server provides the following MCP tools:
